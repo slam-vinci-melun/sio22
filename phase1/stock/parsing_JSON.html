@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+ <head>
+
+  <title>Parsing JSon/JavaScript</title>
+  <meta charset="utf-8" />
+
+ </head>
+ <body>
+  <h1>Démonstration de Json en JavaScript</h1>
+
+  <script language="JavaScript">
+   var data = '{ "fruits":[{"kiwis":3,"mangues":4,"pommes":0},{"panier":true}],"legumes":{"patates":"amandine","poireaux":false},"viandes":["poisson","poulet","boeuf"]}';
+
+   json = JSON.parse(data);
+
+   alert(json.fruits[0].kiwis);
+   alert(json.legumes.patates);
+   alert(json.viandes);
+
+   lesFruits = json.fruits[0];
+
+   alert(Object.entries(lesFruits));
+   alert(Object.values(lesFruits));
+  </script>
+    
+ </body>
+</html>

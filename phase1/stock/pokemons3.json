@@ -1,0 +1,25 @@
+{
+ "pokemons": [
+	{
+		"nom": {
+			"FR": "Bulbizarre",
+			"EN": "Bulbasaur",
+			"JP": "Fushigidane"
+		},
+		"type": ["Plante","Poison"]
+	},{
+		"nom": {
+			"FR": "Herbizarre",
+			"EN": "Ivysaur",
+			"JP": "Fushigisou"
+		},
+		"type": ["Plante","Poison"]
+	},{
+		"nom": {
+			"FR": "Florizarre",
+			"EN": "Venusaur",
+			"JP": "Fushigibana"
+		},
+		"type": ["Plante","Poison"]
+	}]
+}
