@@ -41,10 +41,10 @@
 			let vy = document.getElementById(v);
 			
 			  if (vx.style.display === "none") {
-			    vy.style.src = "./images/moins.jpg";
+			    vy.setAttribute("src","./images/moins.jpg");
 			    vx.style.display = "block";
 			  } else {
-			    vy.style.src = "./images/plus.jpg";				  
+			    vy.setAttribute("src","./images/plus.jpg");
 			    vx.style.display = "none";
 			}
 		}
