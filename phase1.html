@@ -35,6 +35,19 @@
 				}
 			}
 		}
+		
+		function masquage(v,e) {
+  			let vx = document.getElementById(e);
+			let vy = document.getElementById(v);
+			
+			  if (vx.style.display === "none") {
+			    vx.style.display = "block";
+			    vy.style.src = "./images/moins.jpg";
+			  } else {
+			    vx.style.display = "none";
+			    vy.style.src = "./images/plus.jpg";				  
+			}
+		}
 	</script>
 </head>
 
@@ -51,18 +64,21 @@
 				<div class="info">
 					<img src="./images/home.jpg" style="vertical-align:middle;" alt="" />
 					<hr />
-					&nbsp;&nbsp;&nbsp;<a href="#bas"><img src="./images/bas.jpg" style="vertical-align:middle;" width="32" height="32" alt="" /></a>
 				</div>
 			</article>
 
 			<article class="box post post-excerpt">
 				<div class="info">
-					<span class="date"><span class="month">Sep</span> <span class="day">6</span><span class="year">2021</span></span>
+					<span class="date"><span class="month">Sep</span><span class="day">6</span><span class="year">2021</span></span>
+					<hr />
+					&nbsp;&nbsp;&nbsp;<img id="vsem6" src="./images/moins.jpg" style="vertical-align:middle;" onclick = "masquage('vsem6','sem6');" alt="" />
 				</div>
 
 				<header>
 					<h2>Semaine d'intégration</h2>
 				</header>
+				
+				<div id="sem6">
 				<ul>
 					<li>Mise en place du cadre de travail : système, logiciels et bonnes pratiques | <a href="./phase1/Memo_Cadre_de_travail.pdf">Mémo</a>.</li>
 					<li>Activité GIT -> Construction d'un site avec les Github Pages | Mémo : <a href="./phase1/Utiliser Git.pdf">Utiliser GIT</a></li>
@@ -83,6 +99,7 @@
 					
 					</li>
 				</ul>
+				</div>
 			</article>
 
 			<article class="box post post-excerpt">
