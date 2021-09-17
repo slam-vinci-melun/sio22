@@ -35,6 +35,19 @@
 				}
 			}
 		}
+		
+		function masquage(v,e) {
+  			let vx = document.getElementById(e);
+			let vy = document.getElementById(v);
+			
+			  if (vx.style.display === "none") {
+			    vy.setAttribute("src","./images/moins.jpg");
+			    vx.style.display = "block";
+			  } else {
+			    vy.setAttribute("src","./images/plus.jpg");
+			    vx.style.display = "none";
+			}
+		}
 	</script>
 </head>
 
@@ -51,18 +64,20 @@
 				<div class="info">
 					<img src="./images/home.jpg" style="vertical-align:middle;" alt="" />
 					<hr />
-					&nbsp;&nbsp;&nbsp;<a href="#bas"><img src="./images/bas.jpg" style="vertical-align:middle;" width="32" height="32" alt="" /></a>
 				</div>
 			</article>
 
 			<article class="box post post-excerpt">
 				<div class="info">
-					<span class="date"><span class="month">Sep</span> <span class="day">6</span><span class="year">2021</span></span>
+					<span class="date"><span class="month">Sep</span><span class="day">6</span><span class="year">2021</span></span>
+					&nbsp;&nbsp;&nbsp;<img id="vsem6" src="./images/moins.jpg" style="vertical-align:middle;" onclick = "masquage('vsem6','sem6');" alt="" />
 				</div>
 
 				<header>
 					<h2>Semaine d'intégration</h2>
 				</header>
+				
+				<div id="sem6" style="display: block;">
 				<ul>
 					<li>Mise en place du cadre de travail : système, logiciels et bonnes pratiques | <a href="./phase1/Memo_Cadre_de_travail.pdf">Mémo</a>.</li>
 					<li>Activité GIT -> Construction d'un site avec les Github Pages | Mémo : <a href="./phase1/Utiliser Git.pdf">Utiliser GIT</a></li>
@@ -83,15 +98,20 @@
 					
 					</li>
 				</ul>
+				</div>
 			</article>
+			
+			<br /><br /><br />
 
 			<article class="box post post-excerpt">
 				<div class="info">
 					<span class="date"><span class="month">Sep</span> <span class="day">13</span><span class="year">2021</span></span>
+					&nbsp;&nbsp;&nbsp;<img id="vsem13" src="./images/moins.jpg" style="vertical-align:middle;" onclick = "masquage('vsem13','sem13');" alt="" />
 				</div>
 				<header>
 					<h2>Fin semaine d'intégration + Apprentissage Symfony</h2>
 				</header>
+				<div id="sem13" style="display: block;">
 				<ul>
 					<li>La deadline de <a href="https://gitlab.com/okpu/guesswhat">`Guess`</a> est fixée au <strong>mardi 14 septembre</strong></li>
 					<li>Les consignes du rapport sont dans le <a href="https://gitlab.com/okpu/guesswhat/-/blob/master/README.adoc">README.adoc</a> du projet</li>
@@ -109,20 +129,26 @@
 					<li>Cours le développement Web -> DOM/JavaScript/HTTP/HTTPS | Mémos :
 						<blockquote>
 							<a href="./phase1/Environnement_Web.pdf">Environnement_Web</a><br />
-							<a href="./phase1/DOM_JavaScript.pdf">DOM_JavaScript</a> - Fichier <a href="./phase1/Test.html">Test.html</a>
+							<a href="./phase1/DOM_JavaScript.pdf">DOM_JavaScript</a> - Fichier <a href="./phase1/Test.html">Test.html</a><br />
+							<a href="./phase1/Comprendre_AJAX.pdf">Comprendre AJAX</a> - Archive de test <a href="./phase1/xhrDemo.zip">xhrDemo.zip</a><br />
+							<a href="./phase1/TP_Login_v1.pdf">TP Login v1 </a> - Archive de départ <a href="./phase1/TP_Login_v1.zip">TP_Login_v1.zip</a>
 						</blockquote>
 					</li>	
 				</ul>
+				</div>
 			</article>
 
+			<br /><br /><br />
 
 			<article class="box post post-excerpt">
 				<div class="info">
 					<span class="date"><span class="month">Sep</span> <span class="day">20</span><span class="year">2021</span></span>
+					&nbsp;&nbsp;&nbsp;<img id="vsem20" src="./images/moins.jpg" style="vertical-align:middle;" onclick = "masquage('vsem20','sem20');" alt="" />
 				</div>
 				<header>
 					<h2>Apprentissage Symfony : Contrôleur et Vue</h2>
 				</header>
+				<div id="sem20" style="display: block;">
 				<ul>
 					<li><a href="https://ldv-melun.github.io/symfony/">Apprentissage du modèle MVC Symfony - Vue et Contrôleur </a>
 					   <ul><li>Étude et Réalisation des étapes du tutoriel et challenges (TP) - Chapitres 1 à 3 </li></ul>
@@ -132,14 +158,11 @@
 				<hr/>
 			</article>
 		</div>
-		
-		<div id="bas"></div>
 	</div>
 
 	<div id="sidebar">
 
 		<div w3-include-html="./nav_phase1.html"></div>
-
 		<div w3-include-html="./calendar.html"></div>
 
         	<ul id="copyright">
