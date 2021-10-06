@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+<head>
+    <title>Parsing JSon/JavaScript</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <script language="JavaScript">
+        // A : moto
+        // B : auto
+        // C : poids lourds
+        // D : transport en commun
+
+        let permis =
+            [{
+                "nom": "Riri",
+                "permis": ["B"],
+                "vehicule": [{
+                    "marque": "Peugeot",
+                    "modele": "308",
+                    "moteur": "HDI"
+                }, {
+                    "marque": "Renault",
+                    "modele": "Clio",
+                    "moteur": "dCi"
+                }, {
+                    "marque": "Lamborghini",
+                    "modele": "Reventon",
+                    "moteur": "V12"
+                }]
+            }, {
+                "nom": "Fifi",
+                "permis": ["A", "B"],
+                "vehicule": [{
+                    "marque": "Citroen",
+                    "modele": "C3",
+                    "moteur": "VTi"
+                }, {
+                    "marque": "Yamaha",
+                    "modele": "600",
+                    "moteur": "essence"
+                }]
+            },
+            {
+                "nom": "Loulou",
+                "permis": ["B"],
+                "vehicule": [{
+                    "marque": "Peugeot",
+                    "modele": "306",
+                    "moteur": "HDI"
+                }, {
+                    "marque": "Ford",
+                    "modele": "Focus",
+                    "moteur": "TDCi"
+                }]
+            }
+            ]
+
+        // liste des véhicules
+        let textHTML = "";
+        let nom = "";
+        let marque = "";
+        let modele = "";
+        
+        // Code 1
+        for (i in permis) {
+            textHTML += "<h2> Véhicules de " + permis[i].nom + "</h2>";
+        
+            for (j in permis[i].vehicule) {
+                textHTML += permis[i].vehicule[j].marque + " " + permis[i].vehicule[j].modele + "<br>";
+            }
+        }
+
+        // Code 2 (ES6)
+        permis.forEach((p)=>{
+            textHTML += "<h2> Véhicules de " + p.nom + "</h2>";
+
+            p.vehicule.forEach((v)=>{
+                textHTML += v.marque + " " + v.modele + "<br>";
+            });
+        });
+
+        // On écrit...
+        document.write(textHTML);
+    </script>
+</body>
+
+</html>
