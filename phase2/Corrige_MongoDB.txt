@@ -1,0 +1,26 @@
+Correction des requêtes MongoDB
+-------------------------------
+
+Faire avant :
+
+	mongo
+	use pokemons
+	show collections (pour voir la collection pokedex)
+
+En mode console !
+
+1) db.pokedex.find()
+
+2) db.pokedex.find().count()
+
+3) db.pokedex.find({"type":"Poison"})
+
+4) db.pokedex.find().limit(6)
+
+5) db.pokedex.find({"base.Defense":{$gte:80}})
+
+6) db.pokedex.find({"type":{$ne:"Fire"}})
+
+Afficher uniquement les noms Français :
+
+x) db.pokedex.find({},"name.french":1})
