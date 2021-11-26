@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>JSON</title>
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+	<script>
+		if (window.location.search.match(/print-pdf/gi)) {
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = 'css/print/pdf.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		}
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h1>Introduction à JSON</h1>
+
+				<p>
+					<small>(slider framework : reveal.js)</small>
+				</p>
+			</section>
+
+			<section>
+				<h2>JSON</h2>
+				<p>
+					JSON (JavaScript Object Notation)
+				</p>
+				<p>un format simple d' <em> échange de données</em> (lightweight)</p>
+				<p></p>
+				<ul>
+					<li class="fragment">Un humain peut facilement le lire et l'écrire.</li>
+					<li class="fragment">Une machine peut facilement l'exploiter (parse) et le générer.</li>
+				</ul>
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you
+					open the speaker notes window (hit 's' on your keyboard).
+					Rappeler : Format TEXT, editeur
+				</aside>
+			</section>
+			<!-- Example of nested vertical slides -->
+			<section>
+				<h2>JSON - JavaScript</h2>
+				<p>
+					JSON est basé sur un sous-ensemble de JavaScript <br /> (JavaScript Programming Language, Standard
+					ECMA-262 3rd Edition - December 1999)
+
+				</p>
+
+
+			</section>
+
+			<section>
+				<h2>Structures de base</h2>
+				<p>
+					JSON est basé sur 2 structures:</p>
+				<ul>
+					<li>Une collection de paires nom/valeur (object).
+						<p class="fragment" style="font-size: smaller;"> Dans la majorité des langages, il est
+							représenté sous forme d'objet, d'enregistrement (record, struct, agrégat) ou de tableau
+							asssociatif (dictionary, hash table, keyed list, associative array).</p>
+					</li>
+					<li>Une liste ordonnée de valeurs (array)
+						<p class="fragment" style="font-size: smaller">Dans la plupart des langages, représentée par un
+							tableau (array) ou une collection indicée (vecteur, liste ou séquence).</p>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h2>Exemple</h2>
+					<h3>(wikipedia)</h3>
+					<pre><code  contenteditable style="font-size: 18px; margin-top: 20px;">
+              {
+               "menu": {
+                 "id": "file",
+                 "value": "File",
+                 "popup": {
+                   "menuitem": [
+                     { "value": "New", "onclick": "CreateNewDoc()" },
+                     { "value": "Open", "onclick": "OpenDoc()" },
+                     { "value": "Close", "onclick": "CloseDoc()" }
+                   ]
+                 }
+                }
+              }
+
+				</code>
+			</pre>
+				</section>
+
+				<section>
+					<h2>Le même en YAML</h2>
+					<pre><code  contenteditable style="font-size: 18px; margin-top: 20px;">
+        menu:
+				  id: file
+				  value: File
+				  popup:
+				    menuitem:
+				      value: New
+				      onclick: CreateNewDoc()
+				    menuitem:
+				      value: Open
+				      onclick: OpenDoc()
+				    menuitem:
+				      value: Close
+				      onclick: CloseDoc()
+			</code>
+		</pre>
+				</section>
+				<section>
+					<h2>en XML</h2>
+					<pre><code  contenteditable style="font-size: 18px; margin-top: 20px;">
+      <menu id="file" value="File">
+        <popup>
+           <menuitem value="New" onclick="CreateNewDoc()"></menuitem>
+           <menuitem value="Open" onclick="OpenDoc()" ></menuitem>
+           <menuitem value="Close" onclick="CloseDoc()" ></menuitem>
+        </popup>
+      </menu>
+		</code>
+	</pre>
+					<p>Plusieurs structurations possibles, selon que l'on joue sur les attributs ou non</p>
+				</section>
+
+
+
+			</section>
+			<section>
+				<h2>Objet, tableau, valeur</h2>
+			</section>
+			<section>
+				<h2>Objet</h2>
+				<p>
+					Un objet est vue comme un sensemble de couples nom/valeur. </p>
+				<ul>
+					<li>Un objet commence par <b>{</b> et se termine par <b>}</b></li>
+					<li>Chaque attribut (nom) est suivi de <b>:</b> (colon) et de sa <b>valeur</b></li>
+					<li> Les couples sont séparés par une virgule <b>,</b> (comma).</li>
+				</ul>
+				<img src='object.png' />
+
+			</section>
+
+			<section>
+				<h2>Tableau</h2>
+				<p>Un tableau (array) est une collection ordonnée de <b>valeurs</b>.</p>
+				<ul>
+					<li>Un tableau commence par <b>[</b> (left bracket) et se termine par <b>]</b> (right bracket).</li>
+					<li>Les valeurs sont séparées par <b>,</b> (comma).</li>
+				</ul>
+
+				<img src='array.png' />
+			</section>
+
+			<section>
+				<h2>Valeur</h2>
+				<p>Une valeur peut être une string entre double quotes, un nombre, true, false, null, un objet ou un
+					tableau. Ces structures peuvent être emboitées.</p>
+				<img src='value.png' />
+			</section>
+
+			<section>
+				<h2>encode/decode côté serveur avec PHP</h2>
+				<h4> <a href="http://php.net/manual/fr/ref.json.php">API php-json</a></h4>
+
+				<p>Encode (pour retourner du json au client)</p>
+
+				<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+$data = array('a' => 'apple', 'b' => 'banana');
+header('Content-Type: application/json');
+echo json_encode($data, JSON_PRETTY_PRINT);
+		</code></pre>
+				<p>Donnera</p>
+				<pre><code  contenteditable style="font-size: 18px; margin-top: 20px;">
+    {
+      "a": "apple",
+      "b": "banana"
+    }
+	</code></pre>
+			</section>
+
+			<section>
+				<p>decode (pour traduire du json en php)</p>
+
+				<pre><code  contenteditable style="font-size: 18px; margin-top: 20px;">
+		$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
+		var_dump(json_decode($json));
+	</code></pre>
+				<p style="text-align: left; margin-left: 45px; font-size: smaller"> Donne :</p>
+				<pre><code  contenteditable style="font-size: 18px; margin-top: 20px;">
+  object(stdClass)#1 (5) {
+		  ["a"] => int(1)
+		  ["b"] => int(2)
+		  ["c"] => int(3)
+		  ["d"] => int(4)
+		  ["e"] => int(5)
+  }
+</code></pre>
+				<p style="font-size: smaller">Pour une traduction en tableau associatif, on précisera un second
+					paramètre à <emp>true</emp>.</p>
+				<pre><code  contenteditable style="font-size: 18px; margin-top: 20px;">
+var_dump(json_decode($json, true));
+array(5) {
+	 ["a"] => int(1)
+	 ["b"] => int(2)
+	 ["c"] => int(3)
+	 ["d"] => int(4)
+	 ["e"] => int(5)
+}
+</code></pre>
+			</section>
+			<section>
+				<h2>encode/decode côté client avec JavaScript</h2>
+
+			</section>
+
+			<section>
+
+				<p>Les navigateurs incluent des fonctions JS pour encoder/decoder du JSON </p>
+
+				<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+
+// http://stackoverflow.com/questions/10919965/\
+// how-do-i-encode-a-javascript-object-as-json
+
+// To encode an object (This produces a string)
+var json_str = JSON.stringify(myobject);
+
+// To decode (This produces an object)
+var obj = JSON.parse(json_str);
+
+Note that only valid JSON data will be encoded. For example:
+
+var obj = {'foo': 1, 'bar': (function (x) { return x; })}
+JSON.stringify(obj) // --> "{\"foo\":1}"
+
+Valid JSON types are: objects, strings, numbers, arrays, true, false, and null.
+</code></pre>
+
+			</section>
+			<section>
+				<h2>AJAX </h2>
+				<p>(asynchronous JavaScript and XML)</p>
+				<p>
+					Une technologie qui exploite DOM et JavaScript afin de modifier l'information
+					présentée dans le navigateur :
+				</p>
+				<ul>
+					<li>l'objet XMLHttpRequest sert au dialogue asynchrone avec le serveur Web ;</li>
+					<li>XML (ou JSON) structure les informations transmises entre serveur Web et navigateur.</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Exemple</h2>
+				<a href='https://www.w3schools.com/xml/ajax_intro.asp'>ajax w3schools</a>
+			</section>
+
+			<section>
+				<h2>AJAX is a developer's dream</h2>
+				<p> because you can: <br />(https://www.w3schools.com/xml/ajax_intro.asp) </p>
+				<ul>
+					<li>Update a web page without reloading the page</li>
+					<li>Request data from a server - after the page has loaded</li>
+					<li>Receive data from a server - after the page has loaded</li>
+					<li>Send data to a server - in the background</li>
+				</ul>
+			</section>
+
+			<section>
+
+				<p>Exemple de traitement avec jquery</p>
+
+				<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+$.ajax({
+  url : "jsonpartitionne.php",
+  type : 'POST',
+  cache : false,
+  dataType : 'json',
+  data : {"cardGrp" : cardG, "personnes" : liste },
+  success : function(json, statut) {
+       doSomethingWith(json);
+       console.log(json);
+  }
+});
+</code></pre>
+				<p>La réponse reçue (paramètre nommé 'json' ici) sera un objet JS (à cause de la valeur du paramètre
+					dataType) </p>
+			</section>
+
+			<section>
+				<h2>TypeScript </h2>
+				<p> TypeScript est un langage open source qui étend JavaScript. </p>
+				<p> Ses atouts sont </p>
+				<ul>
+					<li>Ajout des types (et permet de définir des interfaces)</li>
+					<li>Permet la complétion et validation</li>
+					<li>Considère JavaScript comme un sous-ensemble de TypeScript </li>
+					<li>Dispose d'un compilateur qui transforme TypseScript en du JavaScript propre</li>
+				</ul>
+				<p><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html">Basic-Types</a></p>
+			</section>
+
+			<section>
+				<h2>TypeScript ; Object </h2>
+				<p> L'Objet est, avec le tableau, la structure principale de JS.</p>
+				<p> Un objet peut être  </p>
+				<ul>
+					<li>de classe anonyme : <pre> obj = { login :"foo", pw: "bar"}</pre></li>
+					<li>Typé : <pre> Interface User { login: string, pw: string }</pre> </li>
+					<li>https://www.typescriptlang.org/docs/handbook/2/objects.html</li>
+				</ul>
+			</section>
+
+		</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
+
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+			// Parallax scrolling
+			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+			// parallaxBackgroundSize: '2100px 900px',
+
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+			]
+		});
+
+	</script>
+
+</body>
+
+</html>
