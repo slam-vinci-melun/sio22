@@ -2014,6 +2014,24 @@ input, select, textarea {
 		color: #fff !important;
 	}
 
+	.box.calendar td.ccf {
+		margin: 0 auto;
+		width: 1.5em;
+		height: 1.5em;
+		text-align: center;
+		line-height: 1.4em;
+		border-radius: 0.4em;
+		-moz-transition: background-color .25s ease-in-out;
+		-webkit-transition: background-color .25s ease-in-out;
+		-ms-transition: background-color .25s ease-in-out;
+		transition: background-color .25s ease-in-out;
+		text-decoration: none;
+		background-color: #fbdcef;
+		background-image: url("./images/bg01.png");
+		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.15), 0 0.025em 0.15em 0em rgba(0, 0, 0, 0.25);
+		color: #fff !important;
+	}
+
 	.box.calendar td.stage {
 		margin: 0 auto;
 		width: 1.5em;
